@@ -1,0 +1,42 @@
+{% extends 'dxango-template.html'%}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+
+<div class="wellcome">
+    <div class="intro-section">
+        <div class="logo"><h2>dxango</h2></div>
+       <div class="intro-text">
+        <h1>Wellcome to Dxango</h1>
+        <h3>Now that you have reached home page follow the instructions</h3>
+       </div>
+    </div>
+    <div class="join-btn">
+        <a href="/auth"><button>join now</button></a>
+    </div>
+</div>
+<div class="lower-part">
+    <div class="instructions">
+        <div class="left-part">
+        <h2>why this website ?</h2>
+        <h3>Well This is a Demo website to test the django app </h3>
+        <p>we will test this basic django webapp if that performs basic functionality like URL Dispatching,Template Rendering, Sqlite Database Connectivity etc.</p>
+        <h2>Why dxango ?</h2>
+        <h3>I don't Know. May be bacause I don't have that much naming preferences.</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, laudantium.
+         Dignissimos</p>
+        </div>
+        <div class="right-part">
+        <h2>What to do next ?</h2>
+        <h3>(1) go to <span>Conatct page</span> , fill the contact form and then we will see if the data goes into the sqlite database.</h3>
+        <h3>(2) Go to <span>Docs page</span> to get more details and source code of this app.</h3>
+        <h3>(3) Go to <span>About page</span> to know about dxango app</h3>
+        <h3>(4) Don't go to <span>Login page</span>. You'd get 404 error. It's not ready yet.</h3>
+        <h3>(5) Click on the logo up there to go back to <span>Home page</span></h3>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,76 @@
+{% extends 'dxango-template.html'%}
+
+{%block title%}
+Docs
+{%endblock title%}
+
+{% block body %}
+<div class="about-section-field">
+    <div class="about-section">
+        <div class="docs-main">
+            <h2>This is the quick dxango setup guide</h2>
+            <p style="background-color: #316554;color: #fff;text-align: center;border-radius: 5px 5px 0 0;
+            margin-top:10px;">this is how our input looks like 
+                </p>
+            <p style="background-color: #e0ece4;color: #474f44;text-align: center;border-radius: 0 0 5px 5px;
+            margin-bottom:10px;">
+                
+                this is how Django comand looks like</p>
+                <h3><b>Follow along :-</b></h3>
+
+            <p>1. Install django</p>
+                <code>pip install django</code>
+                <pre>C:\Users\bisworajSaheb>pip install django</pre>
+                <h3>this should install django web framework on your machie. before that make sure 
+                already have installed python on your machine</h3>
+            
+                <p>2. Go to your worksapce & create your first django project</p>
+                <code>django-admin startproject project_name</code>
+                <pre>
+                C:\Users\bisworajSaheb>cd workspace
+                C:\Users\bisworajSaheb\Workspace>django-admin startproject dxango
+                </pre>
+                <h3>this should create a compact django webapp setup on that folder.in my case the django project 
+                    is "dxango"</h3>
+            <p>3. Create Your first app inside your django project</p>
+            <code>django-admin startapp app_name</code>
+            <pre>
+                C:\Users\bisworajSaheb\Workspace\dxango>
+                C:\Users\bisworajSaheb\Workspace\dxango>django-admin startapp home
+            </pre>
+            <h3>This command should create one app inside your django project folder. in may case app name is "home".</h3>
+
+            <p>4. Run django server to view your site in browser.</p>
+            <code>python manage.py runserver</code>
+            <pre>
+                C:\Users\bisworajSaheb\Workspace\dxango>python manage.py runserver
+                System check identified no issues (0 silenced).
+December 08, 2020 - 22:57:30
+Django version 3.1.4, using settings 'dxango.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+            </pre>
+            <h3>this should start django server on your machine. just follow the link given to view it.</h3>
+            <h2>ok. for more info go to my github repo.</h2>
+
+        </div>
+    </div>
+</div>
+<style>
+    code{
+        display: flex;
+        word-wrap: break-word;white-space: pre-line;overflow-wrap: break-word;
+        
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-weight: bold;
+    margin: 5px 0;
+    color:#06291d;background-color:#31655417;
+    }
+    pre{
+    white-space: pre-line;overflow-wrap: break-word;font-size:xx-small;
+        margin: 5px 0;border-radius: 3px;display: flex;
+        padding:0.5rem 1rem; font-weight: 500;color: white;background-color: #316554;  }
+</style>
+
+{% endblock body%}

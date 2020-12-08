@@ -1,0 +1,1 @@
+web: gunicorn dxango.wsgi --log-file -

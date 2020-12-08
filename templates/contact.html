@@ -1,0 +1,97 @@
+{% extends 'dxango-template.html'%}
+
+{% block title%}
+contact
+{%endblock title%}
+
+{%block body%}
+
+<div class="contact-field-main">
+    <div class="contact-field">
+        <div class="contact-text" id="contact-text">
+            <div class="abort" id="abort">
+                <div class="confirm-text" id="confirm-text"></div>
+                <button id="abt">dismis</button>
+            </div>
+            <div style="padding:0 0.5rem;">
+                <h2>Here's your contact form.</h2>
+                <h3>Fill in the form given here with required credentials.</h3>
+                <p>The form data will be posted to django backend and the data will be stored to Sqlite DB. No exteranl
+                    DataBase is connected so the filled data will be stored inside the integrated Sqlite DB</p>
+                <p>:- go to <span>/admin</span> route to visit admin page</p>
+                <p>:- user name <span>admin</span> & password is <span>admin</span></p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form method="POST" action="/contact">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Enter your name</label>
+                    <input type="text" name="name" placeholder="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Enter Your Email</label>
+                    <input type="email" name="email" placeholder="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Enter Your phone Number</label>
+                    <input type="text" name="phone" placeholder="phone" id="contact">
+                </div>
+                <div class="form-group">
+                    <label for="message">Write Your Message Here</label>
+                    <textarea name="message" cols="30" rows="10" id="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="form-btn">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+    const formbtn = document.getElementById('form-btn');
+    const contactText = document.getElementById('contact-text');
+
+    function saveItem() {
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const phone = document.getElementsByName('contact');
+        const message = document.getElementById('message');
+
+        localStorage.setItem('name', `${name.value}`);
+        localStorage.setItem('email', `${email.value}`);
+        localStorage.setItem('phone', `${contact.value}`);
+        localStorage.setItem('message', `${message.value}`);
+    }
+
+    formbtn.addEventListener('click', () => {
+        saveItem();
+    })
+
+    const name = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+    const phone = localStorage.getItem('phone',);
+    const message = localStorage.getItem('message');
+
+    const submitedText = document.getElementById('confirm-text');
+    if (name === "" && email === "" && phone === "" && message === "") {
+        submitedText.innerHTML = `
+<h2>No Data Recieved !</h2>`;
+        submitedText.classList.add('red');
+    } else {
+        submitedText.innerHTML = `
+<h2>Hello ${name[0].toUpperCase() + name.substring(1)}</h2>
+<h3>Your Phone <span>${phone}</span> & email <span>${email}</span></h3>
+<p>Your Message "${message.substring(0, 20)}..." has been posted</p>
+<h2> We will Contact You Soon</h2>
+`;
+    }
+    const abt = document.getElementById('abt');
+    const abrt = document.getElementById('abort')
+    abt.addEventListener('click', () => { abrt.style.display = "none"; })
+
+
+</script>
+
+{%endblock body%}
